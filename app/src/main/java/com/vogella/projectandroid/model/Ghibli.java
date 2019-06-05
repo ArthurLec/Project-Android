@@ -34,4 +34,20 @@ public class Ghibli{
     }
 
     public String getDescription(){return description;}
+
+    public String getDirector() {
+        return director;
+    }
+
+    public String getProducer() {
+        return producer;
+    }
+
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    public String getScore() {
+        return score;
+    }
 }

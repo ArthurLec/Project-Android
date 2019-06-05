@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.vogella.projectandroid.R;
 import com.vogella.projectandroid.model.Ghibli;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Adapter  extends RecyclerView.Adapter<Adapter.ViewHolder> {
@@ -42,15 +43,20 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ViewHolder> {
         values.remove(position);
         notifyItemRemoved(position);
     }
-    private static final String ListGhibli = "list_ghibli";
-    private static final String POS = "pos_ghibli";
+    private static final String SelectedGhibli = "selected_ghibli";
     public void infoDisplay(int position){
         Log.d("position", String.valueOf(position));
         // Create an Intent to start the second activity
         Intent infoIntent = new Intent(mainActivity, SecondActivity.class);
         final Ghibli selectedGhibli = values.get(position);
-        String desc = selectedGhibli.getDescription();
-        infoIntent.putExtra(POS, desc);
+        ArrayList<String> ghibli= new ArrayList<>() ;
+        ghibli.add(selectedGhibli.getTitle());
+        ghibli.add(selectedGhibli.getDescription());
+        ghibli.add(selectedGhibli.getReleaseDate());
+        ghibli.add(selectedGhibli.getDirector());
+        ghibli.add(selectedGhibli.getProducer());
+        ghibli.add(selectedGhibli.getScore());
+        infoIntent.putStringArrayListExtra(SelectedGhibli,ghibli);
 // Start the new activity.
         mainActivity.startActivity(infoIntent);
     }
