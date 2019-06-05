@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ProjectAndroid</string>
+    <string name="description_1d">description : %1s.</string>
 </resources>

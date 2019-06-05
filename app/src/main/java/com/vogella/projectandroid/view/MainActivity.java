@@ -41,7 +41,7 @@ public class MainActivity extends Activity {
         recyclerView.setLayoutManager(layoutManager);
         // define an adapter
         //Instanciation de mAdapter
-        mAdapter = new Adapter(ghibliList);
+        mAdapter = new Adapter(ghibliList,this);
         recyclerView.setAdapter(mAdapter);
     }
 }
