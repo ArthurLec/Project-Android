@@ -12,6 +12,7 @@ public class SecondActivity extends AppCompatActivity {
 
     private static final String SelectedGhibli = "selected_ghibli";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +21,7 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     public void showDescription() {
+
 
         // Get the text view where the description is displayed
         TextView descriptionView = findViewById(R.id.descritionLabel);
@@ -34,9 +36,9 @@ public class SecondActivity extends AppCompatActivity {
         //String ghibli = getIntent().getStringExtra(SelectedGhibli);
         ArrayList<String> ghibli = getIntent().getStringArrayListExtra(SelectedGhibli);
 
-        titleView.setText(ghibli.get(0));
-        descriptionView.setText(ghibli.get(1));
-        dateView.setText(ghibli.get(2));
+        titleView.setText("\n"+ghibli.get(0));
+        descriptionView.setText("\nDescription : " + ghibli.get(1));
+        dateView.setText("\n"+ghibli.get(2));
         directorView.setText("Director: "+ghibli.get(3));
         producerView.setText("Producer: "+ghibli.get(4));
         scoreView.setText(ghibli.get(5)+"/100");

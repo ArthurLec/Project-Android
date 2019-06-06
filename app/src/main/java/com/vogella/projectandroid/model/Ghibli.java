@@ -3,6 +3,7 @@ package com.vogella.projectandroid.model;
 import com.google.gson.annotations.SerializedName;
 
 public class Ghibli{
+
     @SerializedName("id")
     private String id;
 

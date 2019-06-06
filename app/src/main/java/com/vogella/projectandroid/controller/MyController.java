@@ -14,9 +14,9 @@ public class MyController {
     public MainActivity view;
     private RestApiGhibli restApiGhibli;
 
-    public MyController(MainActivity view, RestApiGhibli restApiPokemon) {
+    public MyController(MainActivity view, RestApiGhibli restApiGhibli) {
         this.view = view;
-        this.restApiGhibli = restApiPokemon;
+        this.restApiGhibli = restApiGhibli;
     }
 
     public void onCreate() {
